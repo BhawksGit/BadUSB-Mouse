@@ -102,7 +102,7 @@ EEPROM.write(0, 0);
 micromusinou.build.vid=0x2340
 micromusinou.build.pid=0x8030
 micromusinou.build.usb_product="Arduino Micro Musinou"
-        </pre>
+		</pre>
         <p>Change the <code>usb_product</code> value to a generic name, in this case we'll make it "USB Device".</p>
     </li>
     <li><p><strong>Save Changes and Reopen the IDE:</strong> Save the modified <code>boards.txt</code> file. Reopen the Arduino IDE, and select "USB Device" as the board.</p></li>
