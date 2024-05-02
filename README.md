@@ -68,6 +68,27 @@ EEPROM.write(0, 0);
 <h3>Debugging</h3>
 <p>For debugging purposes, use the serial output to monitor the status and operation of the device. Ensure to disable or remove serial debugging in the final deployment to avoid detection.</p>
 
+<h2>Renaming the Arduino Device for Obfuscation</h2>
+<p>To further disguise your Smart BadUSB device, you can rename its identification to something less suspicious, such as "USB Device". This process involves using the Musinou hardware library to customize the USB device name.</p>
+
+<h3>Steps to Rename Your Arduino Device:</h3>
+<ol>
+    <li><p><strong>Download the Musinou Hardware Library:</strong> Download and extract the Musinou hardware configuration files from <a href="https://liveelectronics.musinou.net/code/mididevicename/">this link</a> and place them under <code>/Users/username/Documents/Arduino/hardware/</code> on your computer.</p></li>
+    <li><p><strong>Modify Device Settings:</strong> Close your Arduino IDE if it's open. Navigate to <code>/Users/username/Documents/Arduino/hardware/musinou/avr/</code> and open the <code>boards.txt</code> file. Locate the lines for your Arduino model, for example:</p>
+        <pre>
+micromusinou.build.vid=0x2340
+micromusinou.build.pid=0x8030
+micromusinou.build.usb_product="Arduino Micro Musinou"
+        </pre>
+        <p>Change the <code>usb_product</code> value to a generic name, in this case we'll make it "USB Device".</p>
+    </li>
+    <li><p><strong>Save Changes and Reopen the IDE:</strong> Save the modified <code>boards.txt</code> file. Reopen the Arduino IDE, and select "USB Device" as the board.</p></li>
+    <li><p><strong>Upload Your Code:</strong> Upload your existing Smart BadUSB code to the Arduino. This process will install the code under the new device name, making it appear as a generic "USB Device" in system reports and connected devices lists.</p></li>
+    <li><p><strong>Verify Device Name:</strong> Connect the Arduino to a computer. The device should now display with the new name "USB Device".</p></li>
+</ol>
+
+<p>This renaming technique adds an extra layer of stealth, making the Smart BadUSB less noticeable and suspicious when connected to a host computer.</p>
+
 <h2>Installation and Setup</h2>
 <p>Refer to the Arduino IDE for uploading the provided <code>SmartBadUSB_Program_Arduino_Pro_Micro.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
 <a href="https://github.com/BhawksGit/SmartBadUSB">GitHub Repository</a>
