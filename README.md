@@ -112,6 +112,6 @@ micromusinou.build.usb_product="Arduino Micro Musinou"</pre>
 
 <h2>Installation and Setup</h2>
 <p>Refer to the Arduino IDE for uploading the provided <code>SmartBadUSB_Program_Arduino_Pro_Micro.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
-<a href="https://github.com/BhawksGit/SmartBadUSB">GitHub Repository</a>
+<a href="https://github.com/BhawksGit/Smart-BadUSB">GitHub Repository</a>
 
 <p>Thank you for exploring the Smart BadUSB project. For more information or to contribute, please visit the GitHub repository linked above.</p>
