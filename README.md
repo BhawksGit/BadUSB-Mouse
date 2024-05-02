@@ -8,7 +8,7 @@
 <h2>Key Features</h2>
 <ul>
     <li>Detection of the host operating system using HID protocol.</li>
-    <li>Use of a photodiode to check for mouse LED activity to determine the best time to execute the payload.</li>
+    <li>Use of a phototransistor to check for mouse LED activity to determine the best time to execute the payload.</li>
     <li>Self-destruct feature that disables the Arduino after successful payload execution.</li>
 </ul>
 
@@ -16,7 +16,7 @@
 <ul>
     <li>Arduino Pro Micro</li>
     <li>USB 2.0 Expansion Module</li>
-    <li>5mm Photodiode</li>
+    <li>5mm Phototransistor</li>
     <li>120 Ohm Resistor</li>
     <li>26 AWG or similar Wire</li>
     <li>Micro USB Solderable Plug or a spliced phone cable</li>
@@ -24,7 +24,7 @@
 </ul>
 
 <h2>Wiring How-To</h2>
-<p>This section provides detailed, step-by-step instructions on how to integrate the Arduino into the mouse hardware along with a USB hub and a photodiode. Follow these steps carefully, and refer to the wiring diagram for visual guidance.</p>
+<p>This section provides detailed, step-by-step instructions on how to integrate the Arduino into the mouse hardware along with a USB hub and a phototransistor. Follow these steps carefully, and refer to the wiring diagram for visual guidance.</p>
 
 <ol>
     <li><strong>Preparing the Mouse Cable:</strong> Remove the USB connector from the mouse motherboard. Cut off the end connector, then strip the four wires (data+, data-, positive, and ground).</li>
@@ -38,8 +38,8 @@
     </li>
     <li><strong>Connecting the Arduino:</strong> Solder four wires to a micro USB solderable plug and connect these wires to another set of USB pins on the USB hub. Be mindful of matching the wire connections correctly. Connect the micro USB plug to the Arduino.</li>
     <li><strong>Reconnecting the Mouse USB:</strong> Solder four additional wires to the bottom pads where the USB connector was originally attached to the mouse, and connect these wires to another set of USB pins on the USB hub. Ensure correct wiring alignment.</li>
-    <li><strong>Wiring the Photodiode:</strong> Solder the positive lead of the photodiode (the longer one) to a 120-ohm resistor, then connect this lead to pin A2 on the Arduino. Solder the other, shorter side of the photodiode to ground.</li>
-    <li><strong>Positioning the Photodiode:</strong> Position the photodiode so that its top faces the internal mouse LED to capture lighting changes. Adjust the <code>activeSensorValue</code> based on the brightness of the LED, which may vary between mouse models. This adjustment can be made by adding a serial debug statement to continuously print out the sensor value.</li>
+    <li><strong>Wiring the Phototransistor:</strong> Solder the positive lead of the phototransistor (the longer one) to a 120-ohm resistor, then connect this lead to pin A2 on the Arduino. Solder the other, shorter side of the phototransistor to ground.</li>
+    <li><strong>Positioning the Phototransistor:</strong> Position the photodiode so that its top faces the internal mouse LED to capture lighting changes. Adjust the <code>activeSensorValue</code> based on the brightness of the LED, which may vary between mouse models. This adjustment can be made by adding a serial debug statement to continuously print out the sensor value.</li>
     <li><strong>Securing Components:</strong> Glue the components in place atop the mouse motherboard. Depending on the mouse model, you may need to modify the plastic housing inside the mouse (using clippers or a Dremel) to accommodate the new components.</li>
 </ol>
 
