@@ -69,7 +69,7 @@ EEPROM.write(0, 0);
 <p>For debugging purposes, use the serial output to monitor the status and operation of the device. Ensure to disable or remove serial debugging in the final deployment to avoid detection.</p>
 
 <h2>Installation and Setup</h2>
-<p>Refer to the Arduino IDE for uploading the provided <code>20231127_badusb_experimental.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
+<p>Refer to the Arduino IDE for uploading the provided <code>SmartBadUSB_Program_Arduino_Pro_Micro.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
 <a href="https://github.com/BhawksGit/SmartBadUSB">GitHub Repository</a>
 
 <p>Thank you for exploring the Smart BadUSB project. For more information or to contribute, please visit the GitHub repository linked above.</p>
