@@ -98,11 +98,9 @@ EEPROM.write(0, 0);
 <ol>
     <li><p><strong>Download the Musinou Hardware Library:</strong> Download and extract the Musinou hardware configuration files from <a href="https://liveelectronics.musinou.net/code/mididevicename/">this link</a> and place them under <code>/Users/username/Documents/Arduino/hardware/</code> on your computer.</p></li>
     <li><p><strong>Modify Device Settings:</strong> Close your Arduino IDE if it's open. Navigate to <code>/Users/username/Documents/Arduino/hardware/musinou/avr/</code> and open the <code>boards.txt</code> file. Locate the lines for your Arduino model, for example:</p>
-        <pre>
-micromusinou.build.vid=0x2340
+        <pre>micromusinou.build.vid=0x2340
 micromusinou.build.pid=0x8030
-micromusinou.build.usb_product="Arduino Micro Musinou"
-	</pre>
+micromusinou.build.usb_product="Arduino Micro Musinou"</pre>
         <p>Change the <code>usb_product</code> value to a generic name, in this case we'll make it "USB Device".</p>
     </li>
     <li><p><strong>Save Changes and Reopen the IDE:</strong> Save the modified <code>boards.txt</code> file. Reopen the Arduino IDE, and select "USB Device" as the board.</p></li>
