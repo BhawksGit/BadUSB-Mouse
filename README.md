@@ -1,1 +1,1 @@
-![alt text](https://github.com/BhawksGit/SmartBadUSB/blob/main/images/titleSlide.jpg?raw=true)
+![alt text](https://github.com/BhawksGit/SmartBadUSB/blob/main/images/titleSlide.png?raw=true)
