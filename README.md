@@ -18,7 +18,7 @@
     <li>USB 2.0 Expansion Module</li>
     <li>5mm Photodiode</li>
     <li>120 Ohm Resistor</li>
-    <li>26 AWG Wire</li>
+    <li>26 AWG or similar Wire</li>
     <li>Micro USB Solderable Plug or a spliced phone cable</li>
     <li>Soldering Iron & Solder</li>
 </ul>
