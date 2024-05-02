@@ -23,6 +23,29 @@
     <li>Soldering Iron & Solder</li>
 </ul>
 
+<h2>Wiring How-To</h2>
+<p>This section provides detailed, step-by-step instructions on how to integrate the Arduino into the mouse hardware along with a USB hub and a photodiode. Follow these steps carefully, and refer to the wiring diagram for visual guidance.</p>
+
+<ol>
+    <li><strong>Preparing the Mouse Cable:</strong> Remove the USB connector from the mouse motherboard. Cut off the end connector, then strip the four wires (data+, data-, positive, and ground).</li>
+    <li><strong>Wiring the Mouse to the USB Hub:</strong> Connect these four wires to the USB_IN line on the USB hub, labeled on the back side of the hub. Ensure the connections match the standard USB layout:
+        <ul>
+            <li><strong>Red:</strong> Positive wire, carries 5V direct current.</li>
+            <li><strong>Black:</strong> Ground wire.</li>
+            <li><strong>White:</strong> Positive data (D+).</li>
+            <li><strong>Green:</strong> Negative data (D-).</li>
+        </ul>
+    </li>
+    <li><strong>Connecting the Arduino:</strong> Solder four wires to a micro USB solderable plug and connect these wires to another set of USB pins on the USB hub. Be mindful of matching the wire connections correctly. Connect the micro USB plug to the Arduino.</li>
+    <li><strong>Reconnecting the Mouse USB:</strong> Solder four additional wires to the bottom pads where the USB connector was originally attached to the mouse, and connect these wires to another set of USB pins on the USB hub. Ensure correct wiring alignment.</li>
+    <li><strong>Wiring the Photodiode:</strong> Solder the positive lead of the photodiode (the longer one) to a 120-ohm resistor, then connect this lead to pin A2 on the Arduino. Solder the other, shorter side of the photodiode to ground.</li>
+    <li><strong>Positioning the Photodiode:</strong> Position the photodiode so that its top faces the internal mouse LED to capture lighting changes. Adjust the <code>activeSensorValue</code> based on the brightness of the LED, which may vary between mouse models. This adjustment can be made by adding a serial debug statement to continuously print out the sensor value.</li>
+    <li><strong>Securing Components:</strong> Glue the components in place atop the mouse motherboard. Depending on the mouse model, you may need to modify the plastic housing inside the mouse (using clippers or a Dremel) to accommodate the new components.</li>
+</ol>
+
+<p>Ensure all connections are secure and double-check for any potential shorts. For more clarity, see the included wiring diagram:</p>
+<img src="https://github.com/BhawksGit/SmartBadUSB/blob/main/images/wiring.png?raw=true" alt="Wiring Diagram">
+
 <h2>Using the Program</h2>
 <p>This program is designed to operate with specific pin settings and timing variables to effectively deploy a payload on Windows systems. Below are instructions on how to adjust key parameters and deploy the payload safely and effectively.</p>
 
