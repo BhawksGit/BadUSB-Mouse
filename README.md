@@ -1,9 +1,9 @@
-<h1>Smart BadUSB Project</h1>
+<h1>BadUSB Mouse Project</h1>
 
-<img src="https://github.com/BhawksGit/SmartBadUSB/blob/main/images/titleSlide.png?raw=true" alt="Smart BadUSB Title Slide">
+<img src="https://github.com/BhawksGit/BadUSB-Mouse/blob/main/images/titleSlide.png?raw=true" alt="BadUSB Mouse Title Slide">
 
 <h2>Project Overview</h2>
-<p>The Smart BadUSB is a modified USB device that mimics a keyboard but is embedded within a standard USB computer mouse. It executes a malicious payload when connected to a host computer without any obvious signs of its presence, making it more discreet than a traditional BadUSB device.</p>
+<p>The BadUSB Mouse is a modified USB device that mimics a keyboard but is embedded within a standard USB computer mouse. It executes a malicious payload when connected to a host computer without any obvious signs of its presence, making it more discreet than a traditional BadUSB device.</p>
 
 <h2>Key Features</h2>
 <ul>
@@ -44,7 +44,7 @@
 </ol>
 
 <p>Ensure all connections are secure and double-check for any potential shorts. For more clarity, see the included wiring diagram:</p>
-<img src="https://github.com/BhawksGit/SmartBadUSB/blob/main/images/wiring.png?raw=true" alt="Wiring Diagram">
+<img src="https://github.com/BhawksGit/BadUSB-Mouse/blob/main/images/wiring.png?raw=true" alt="Wiring Diagram">
 
 <h2>Using the Program</h2>
 <p>This program is designed to operate with specific pin settings and timing variables to effectively deploy a payload on Windows systems. Below are instructions on how to adjust key parameters and deploy the payload safely and effectively.</p>
@@ -92,7 +92,7 @@ EEPROM.write(0, 0);
 <p>For debugging purposes, use the serial output to monitor the status and operation of the device. Ensure to disable or remove serial debugging in the final deployment to avoid detection.</p>
 
 <h2>Renaming the Arduino Device for Obfuscation</h2>
-<p>To further disguise your Smart BadUSB device, you can rename its identification to something less suspicious, such as "USB Device". This process involves using the Musinou hardware library to customize the USB device name.</p>
+<p>To further disguise your BadUSB Mouse device, you can rename its identification to something less suspicious, such as "USB Device". This process involves using the Musinou hardware library to customize the USB device name.</p>
 
 <h3>Steps to Rename Your Arduino Device:</h3>
 <ol>
@@ -104,14 +104,14 @@ micromusinou.build.usb_product="Arduino Micro Musinou"</pre>
         <p>Change the <code>usb_product</code> value to a generic name, in this case we'll make it "USB Device".</p>
     </li>
     <li><p><strong>Save Changes and Reopen the IDE:</strong> Save the modified <code>boards.txt</code> file. Reopen the Arduino IDE, and select "USB Device" as the board.</p></li>
-    <li><p><strong>Upload Your Code:</strong> Upload your existing Smart BadUSB code to the Arduino. This process will install the code under the new device name, making it appear as a generic "USB Device" in system reports and connected devices lists.</p></li>
+    <li><p><strong>Upload Your Code:</strong> Upload your existing BadUSB Mouse code to the Arduino. This process will install the code under the new device name, making it appear as a generic "USB Device" in system reports and connected devices lists.</p></li>
     <li><p><strong>Verify Device Name:</strong> Connect the Arduino to a computer. The device should now display with the new name "USB Device".</p></li>
 </ol>
 
-<p>This renaming technique adds an extra layer of stealth, making the Smart BadUSB less noticeable and suspicious when connected to a host computer.</p>
+<p>This renaming technique adds an extra layer of stealth, making the BadUSB Mouse less noticeable and suspicious when connected to a host computer.</p>
 
 <h2>Installation and Setup</h2>
-<p>Refer to the Arduino IDE for uploading the provided <code>SmartBadUSB_Program_Arduino_Pro_Micro.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
-<a href="https://github.com/BhawksGit/Smart-BadUSB">GitHub Repository</a>
+<p>Refer to the Arduino IDE for uploading the provided <code>BadUSBMouse_Program_Arduino_Pro_Micro.ino</code> script to the Arduino Pro Micro. Detailed wiring instructions and setup procedures can be found in the documentation linked below.</p>
+<a href="https://github.com/BhawksGit/BadUSB-Mouse">GitHub Repository</a>
 
-<p>Thank you for exploring the Smart BadUSB project. For more information or to contribute, please visit the GitHub repository linked above.</p>
+<p>Thank you for exploring the BadUSB Mouse project. For more information or to contribute, please visit the GitHub repository linked above.</p>
